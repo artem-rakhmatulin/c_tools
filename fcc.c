@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 
   if (argc != 2)
   {
-    printf("Using: %s filename\n", argv[0]);
+    fprintf(stderr, "Using: %s filename\n", argv[0]);
     exit(EXIT_FAILURE);
   }
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
   if (NULL == fp)
   {
-    puts("File open error.\n");
+    fputs("File open error.\n", stderr);
     exit(EXIT_FAILURE);
   }
 

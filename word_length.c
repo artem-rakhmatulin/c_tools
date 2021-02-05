@@ -1,15 +1,19 @@
-// wordlength.c -- small tool for counting number of characters in word
+// word_length.c -- small tool for counting number of characters in word
 // Artem Rakhmatulin, 29.01.2021
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char **argv)
 {
-  const char *word = NULL;
-  unsigned short cnt = 0;
+  const char *word;
+  unsigned short cnt;
 
   if (argc != 2)
-    return -1;
+  {
+    fprintf(stderr, "Usage: %s string\n", argv[0]);
+    exit(EXIT_FAILURE);
+  }
 
   word = argv[1]; 
 

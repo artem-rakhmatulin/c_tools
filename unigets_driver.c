@@ -54,6 +54,7 @@ char *unigets(void)
             printf("Unget char: \'%c\' to stdin\n", s1[k]);
           ungetc(s1[k], stdin);
         }
+        free(s1);
         break;
       } else if (ch == '\n') {
         s1[j] = '\0';
@@ -64,6 +65,7 @@ char *unigets(void)
           printf("Finally s1: \"%s\"\n", s1);
           printf("Finally s2: \"%s\"\n", s2);
         }
+        free(s1);
         return s2;
       } else {
         s1[j] = ch;

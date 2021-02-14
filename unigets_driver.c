@@ -8,15 +8,15 @@
 #include <string.h>
 #include <stdbool.h>
 
-char *unigets(void);
+char * unigets(void);
 
 static bool debug;
 
 int main(int argc, char **argv)
 {
-  if (argc == 2)
-    if (strcmp(argv[1], "debug") == 0)
-      debug = true;
+  if ((argc == 2) && (!strcmp(argv[1], "-d")))
+    debug = true;
+
   char *str = unigets();
   puts(str);
 
@@ -28,8 +28,8 @@ char *unigets(void)
   for (int i = 2; (i * 2) < INT_MAX; i *= 2)
   {
     if (debug)
-    printf("i = %d\n", i);
-      char *s1 = (char *) calloc(1, i);
+      printf("i = %d\n", i);
+    char *s1 = (char *) calloc(1, i);
     for (int j = 0; j < i; j++)
     {
       if (debug)
@@ -72,5 +72,6 @@ char *unigets(void)
       }
     }
   }
+
   return NULL;
 }
